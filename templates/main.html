@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>PALM VEIN RECOGNITION</h1>
+  </div>
+</div>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4"> 
+        <div class="panel panel-success">
+            <div class="panel-heading">Original Image</div>
+            <div class="panel-body">
+              <img src="" id="original" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+            <label class="btn-upload">
+              <form action="" method="post">
+                <input type="file" name="fileupload">
+                <input type="hidden" name="filename" id="filename">
+              </form>
+            </label>
+        </div>
+    </div>
+    <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+            <div class="panel-heading">ROI Detection</div>
+            <div class="panel-body">
+              <img src="" id="ROI" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">Median Filter</div>
+        <div class="panel-body">
+          <img src="" id="MedianFilter" class="img-responsive" style="width:100%" alt="Image"></div>
+        <!-- <div class="panel-footer">Buy 50 mobiles and get a gift card</div> -->
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+            <div class="panel-heading">Adaptive Histogram Equalization</div>
+            <div class="panel-body">
+              <img src="" id="CLAHE" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+            <!-- <div class="panel-footer">Buy 50 mobiles and get a gift card</div> -->
+        </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Noise Removal</div>
+        <div class="panel-body">
+          <img src="" id="Wiener" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <!-- <div class="panel-footer">Buy 50 mobiles and get a gift card</div> -->
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">Anistropic Diffusion Filter</div>
+        <div class="panel-body">
+          <img src="" id= "ADF" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <!-- <div class="panel-footer">Buy 50 mobiles and get a gift card</div> -->
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+    <div class="row">
+        <div class="col-sm-4"> 
+            <div class="panel panel-primary">
+                <div class="panel-heading">Morfologi Closing</div>
+                <div class="panel-body">
+                  <img src="" id="Morfologi" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <!-- <div class="panel-footer">Buy 50 mobiles and get a gift card</div> -->
+            </div>
+        </div>
+      <div class="col-sm-4">
+        <div class="panel panel-danger">
+          <div class="panel-heading">Hasil Preprocessing</div>
+          <div class="panel-body">
+            <img src="" id="Output" class="img-responsive" style="width:100%" alt="Image"></div>
+          <!-- <div class="panel-footer">Buy 50 mobiles and get a gift card</div> -->
+        </div>
+      </div>      
+    </div>
+  </div><br><br>
+
+</body>
+<script>
+  $(document).ready(() => {
+    $('input[type="file"]').change((e) => {
+      var filename = e.target.files[0].name
+      $("#filename").val(filename)
+      $('#original').attr('src', '/static/PalmVein/' + filename)
+      $('#ROI').attr('src', '/static/ROI/' + filename)
+      $('#MedianFilter').attr('src', '/static/Medfil_new/' + filename)
+      $('#CLAHE').attr('src', '/static/CLAHE_new/' + filename)
+      $('#Wiener').attr('src', '/static/Wiener_new/' + filename)
+      $('#ADF').attr('src', '/static/ADF_new/' + filename)
+      $('#Morfologi').attr('src', '/static/MorClos_new/' + filename)
+      $('#Output').attr('src', '/static/Output_new/' + filename)
+
+      alert(("#filename").val())
+    })
+  })
+</script>
+</html>

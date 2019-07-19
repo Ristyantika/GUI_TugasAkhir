@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>CSS Grid System | Responsive Blog Section Using CSS3 Grid</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <header>
+          <h1>Latest News</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus consectetur hendrerit. Phasellus at ex ultricies, elementum diam non, facilisis tortor. Fusce vel ante massa. Nullam ut elit urna. Maecenas non fringilla mi.</p>
+        </header>
+        <main>
+          <div class="singleBlog">
+            <div class="blogContent">
+                <h3>A Chair of Million <span>Art</span></h3>
+            </div>
+            <img src="{{ url_for('static', filename='images.jpg') }}" alt="">
+            
+          </div>
+          <div class="singleBlog">
+            <div class="blogContent">
+                <h3>A Chair of Million <span>Art</span></h3>
+            </div>
+            <img src="{{ url_for('static', filename='images.jpg') }}" alt="">
+          </div>
+          <div class="singleBlog">
+            <div class="blogContent">
+                <h3>A Chair of Million <span>Art</span></h3>
+            </div>
+            <img src="{{ url_for('static', filename='images.jpg') }}" alt="">
+          </div>
+          <div class="singleBlog">
+            <div class="blogContent">
+                <h3>A Chair of Million <span>Art</span></h3>
+            </div>
+            <img src="{{ url_for('static', filename='images.jpg') }}" alt="">
+          </div>
+        </main>
+      </div>
+    </section>
+  </body>
+</html>
